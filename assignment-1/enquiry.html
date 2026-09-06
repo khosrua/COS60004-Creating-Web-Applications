@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="Daniel Ding">
+        <title>Enquiry</title>
+
+        <!-- External CSS stylesheet -->
+        <link rel="stylesheet" href="styles/style.css">
+
+        <!-- External Google Font -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header id="header">
+            <a href="index.html" id="logo"><img src="images/ducky_logo.webp" alt="Ducky Logo" height="64"></a>
+            <nav id="nav_main">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="product.html">Product</a>
+                    </li>
+                    <li>
+                        <a href="enquiry.html">Enquiry</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="enhancement.html">Enhancement</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <h1>Product Enquiry</h1>
+            <form method="post" action="https://mercury.swin.edu.au/it000000/formtest.php">
+                <label for="fname">First Name <input type="text" name="fname" id="fname" pattern="[A-za-z]+" maxlength="25" required="required"></label>
+                
+
+                <label for="lname">Last Name <input type="text" name="lname" id="lname" pattern="[A-za-z]+" maxlength="25" required="required"></label>
+
+                <label for="emailaddr">Email <input type="email" name="emailaddr" id="emailaddr"></label>
+                
+
+                <fieldset>
+                    <legend>Address</legend>
+                    <p>
+                        <label for="street_addr">Street Address <input type="text" name="stresst_addr" id="street_addr" maxlength="40" pattern="([A-za-z]|[0-9]|\ )+" required="required"></label>
+                    </p>
+
+                    <p>
+                        <label for="suburb">Surburb <input type="text" name="suburb" id="suburb" maxlength="20" pattern="([A-za-z]|[0-9]|\ )+" required="required"></label>
+                        
+
+                        <label for="state">
+                            State <select name="state" id="state">
+                                <option value="vic" selected="selected">VIC</option>
+                                <option value="nsw">NSW</option>
+                                <option value="qld">QLD</option>
+                                <option value="nt">NT</option>
+                                <option value="wa">WA</option>
+                                <option value="tas">TAS</option>
+                                <option value="act">ACT</option>
+                            </select>
+                        </label>
+
+                        <label for="postcode">Postcode <input type="text" id="postcode" name="postcode" maxlength="4" size="4" pattern="[0-9]{4}" required="required"></label>
+                        
+                    </p>
+                </fieldset>
+
+                <label for="phonenum">Phone Number <input type="text" name="phonenum" id="phonenum" placeholder="00 0000 0000" pattern="[0-9]+" maxlength="10" required="required"></label>
+                
+
+                <p>
+                    Preferred contact
+
+                    
+                    <label for="email"><input type="radio" name="pcontact" id="email" value="email" required="required">Email</label>
+
+                    
+                    
+                    <label for="post"><input type="radio" name="pcontact" id="post" value="post">Post</label>
+
+                    
+                    
+                    <label for="phone"><input type="radio" name="pcontact" id="phone" value="phone">Phone</label>
+
+                </p>
+
+                <p>
+                    <label for="product">
+                        Product <select name="product" id="product">
+                            <option value="OK-M" selected="selected">OK-M</option>
+                            <option value="OneX">One X</option>
+                            <option value="One3">One 3</option>
+                        </select>
+                    </label>
+                </p>
+
+                <p>
+                    Product Feature
+
+                    
+                    <label for="switches"><input type="checkbox" name="feature[]" id="switches" value="switches"  required="required">Hot-Swappable Switches</label>
+
+                    
+                    <label for="connectivity"><input type="checkbox" name="feature[]" id="connectivity" value="connectivity">Connectivity</label>
+
+                    
+                    <label for="via"><input type="checkbox" name="feature[]" id="via" value="via">VIA</label>
+                </p>
+
+                <p>
+                    <label for="comment">Comment</label><br>
+                    <textarea name="comment" id="comment"></textarea>
+                </p>
+
+                <p>
+                    <input type="submit" value="Submit">
+                    <input type="reset" value="Reset">
+                </p>
+            </form>
+        </main>
+
+        <footer>
+            <p id="top"><a href="#header">Back to Top</a></p>
+            <nav id="nav_footer">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="enhancement.html">Enhancement</a></li>
+                </ul>
+            </nav>
+            <p id="copyright">
+                © 2026 Daniel D
+            </p>
+        </footer>
+    </body>
+</html>

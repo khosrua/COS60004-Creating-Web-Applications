@@ -1,13 +1,52 @@
+/* Declare global colour scheme */
+/* https://coolors.co/0a2239-53a2be-1d84b5-132e32-176087 */
+:root {
+    --dark1: #132E32;
+    --dark2: #0A2239;
+    --lightText: aliceblue;
+    --lightBackground: azure;
+    --light1: #53A2BE;
+    --mid1: #1D84B5;
+    --mid2: #176087;
+}
+
+
+/* External Font */
+.ubuntu-mono-regular {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.ubuntu-mono-bold {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 700;
+  font-style: normal;
+}
+
+.ubuntu-mono-regular-italic {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 400;
+  font-style: italic;
+}
+
+.ubuntu-mono-bold-italic {
+  font-family: "Ubuntu Mono", monospace;
+  font-weight: 700;
+  font-style: italic;
+}
+
+
 * {
 
-    font-family: Arial, Helvetica, sans-serif;
-    color: aliceblue;
+    font-family: "Ubuntu Mono", monospace;
 }
 
 body {
-    max-width: 64em;
+    max-width: 1000px;
     margin: auto;
-    background-color: #132E32;
+    background-color: var(--dark1);
+    color: var(--lightText);
 }
 
 /* Nav Master */
@@ -17,36 +56,42 @@ nav ul {
 
 nav ul li a {
     text-decoration: none;
+    color: var(--lightText);
+    font-size: 1.2em;
 }
 
 /* Header */
 header {
-    height: 64px;
+    min-height: 64px;
+    margin-top: 8px;
+    overflow: auto;
 }
 
-header a img {
-    height: 100%;
+#logo {
+    margin-left: 4px;
+    max-height: 64px;
 }
 
 /* Top Nav Bar */
 #nav_main {
-    margin: auto;
-    height: 100%;
     float: right;
     text-align: center;
+    vertical-align: middle;
 }
 
 #nav_main ul {
-    height: 100%;
+    display: flex;
+    flex-direction: row;
 }
 
-#nav_main ul li {
-    display: inline;
-    margin: none;
-    height: 100%;
-    border-left: 1px solid #53A2BE;
-    padding-top: 1em;
-    padding-bottom: 1em;
+#nav_main ul li{
+    /* display: flex; */
+    /* flex-direction: row; */
+    margin: 0;
+
+    border-left: 1px solid var(--light1);
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
 }
 
 #nav_main ul li:first-child {
@@ -54,24 +99,38 @@ header a img {
 }
 
 #nav_main ul li a{
-    padding-left: 2em;
-    padding-right: 2em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    width: 8em;
+    padding-left: 1em;
+    padding-right: 1em;
+    padding-top: 0.5em;
+    padding-bottom: 0.5em;
+    min-width: 8em;
     font-weight: bold;
 }
 
 header nav ul li a:hover {
-    background-color: #176087;
+    background-color: var(--mid2);
 }
 
 /* Footer */
 footer {
     clear: both;
     margin: auto;
-    /* background-color: #176087; */
-    color: #132E32;
+    /* background-color: var(--mid2); */
+    color: var(--lightText);
+}
+
+#top {
+
+    text-align: center;
+}
+
+#top a {
+    text-decoration: none;
+    color: var(--lightText);
+}
+
+#top a:hover {
+    color: var(--mid1);
 }
 
 #copyright {
@@ -95,11 +154,272 @@ footer {
 }
 
 #nav_footer ul li a:hover{
-    color: #1d84b5;
+    color: var(--mid1);
 }
 
 main {
-    background-color: azure;
-    color: #132E32;
+    background-color: var(--lightBackground);
+    color: var(--dark1);
     padding: 1em;
+}
+
+/* CSS for Index */
+
+main#index img {
+    width: 100%;
+}
+
+h1 {
+    text-align: center;
+}
+
+article {
+    margin: auto;
+    padding: 1em;
+    /* height: 1000px; */
+    max-width: 50%;
+}
+
+main#index {
+    background-image: url(images/best-ducky-keyboards-medium.png);
+    background-repeat: no-repeat;
+    padding: 0;
+}
+
+/* CSS for Product */
+
+main#product {
+    overflow: auto;
+}
+
+main#product h1 {
+    padding-bottom: 1.5em;
+    font: small-caps bold 3em "Ubuntu Mono", monospace;
+}
+
+main#product section {
+    max-width: 38em;
+    padding-bottom: 2em;
+    margin: auto;
+    clear: both;
+}
+
+main#product section figure {
+    max-width: 50%;
+    clear: both;
+    float: left;
+}
+
+main#product section figure figcaption {
+    padding-top: 1em;
+    text-align: center;
+}
+
+main#product section figure img{
+    max-width: 100%;
+    transition: all 0.3s;
+}
+
+main#product section figure img:hover {
+    transform: scale(1.15)
+}
+
+main#product section aside {
+    max-width: 25%;
+    float: right;
+}
+
+main#product section aside h2 {
+    text-align: center;
+}
+
+/* Product Accordion */
+input.tab-check {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
+}
+
+.tab {
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 4px -2px rgba(0,0,0,0.5);
+    width: 100%;
+    color: var(--lightText);
+    overflow: hidden;
+}
+
+.tab .tab-label {
+    display: flex;
+    justify-content: space-between;
+    padding: 1em;
+    background-color: var(--mid2);
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.tab .tab-label:hover{
+    background-color: var(--mid1);
+}
+
+.tab .tab-label::after {
+    content: "\276F";
+    width: 1em;
+    height: 1em;
+    text-align: right;
+    transition: all .35s;
+}
+
+.tab .tab-content {
+    max-height: 0;
+    padding: 0 1em;
+    color: var(--dark1);
+    background-color: var(--lightBackground);
+    transition: all 0.35s;
+}
+
+input.tab-check:checked {
+    + .tab-label {
+        background-color: var(--mid1);
+        &::after {
+            transform: rotate(90deg);
+        }
+    }
+    ~ .tab-content{
+        /* background-color: #0A2239; */
+        max-height: 100vh;
+        /* padding: 1em; */
+    }
+}
+
+/* About */
+
+section#about-sec {
+    width: 48em;
+    margin: auto;
+}
+
+section h2{
+    text-align: center;
+}
+
+#about-h{
+    text-align: center;
+}
+
+dl#about {
+    float: left;
+    padding: 0.5em;
+    display: grid;
+}
+
+dl#about dt {
+    width: 8em;
+    padding-top: 1em;
+    font-weight: bold;
+    color: var(--dark1);
+}
+
+dl#about dt::after{
+    content: ": ";
+}
+
+dl#about dd {
+    margin-left: 1em;
+}
+
+#photo {
+    float: right;
+}
+
+#photo img {
+    border-radius: 32px;
+    box-shadow: 0px 4px 4px -2px rgba(0,0,0,0.5);
+}
+
+
+/* Timetable */
+section#timetable-sec {
+    clear: both;
+}
+
+table#timetable {
+    margin: auto;
+}
+
+
+table#timetable, table#timetable th, table#timetable td {
+    /* border: 1px dotted; */
+    border-collapse: collapse;
+    height: 1.5em;
+}
+
+table#timetable td{
+    border: 1px dotted;
+}
+
+.weekday {
+    font-weight: bold;
+    width: 10em;
+}
+
+.time {
+    font-weight: bold;
+    width: 3em;
+    text-align: right;
+    vertical-align: top;
+    padding: 0.2em 0.2em 0.2em 0.2em;
+    border-top: 1px dotted;
+}
+
+.cos60009, .cos60004 {
+    text-align: center;
+    border-radius: 8px;
+    padding: 4px 4px 4px 4px;
+    color: var(--lightText);
+    box-shadow: 0px 4px 4px -2px rgba(0,0,0,0.5);
+    transition: all 0.3s;
+}
+
+.cos60009:hover, .cos60004:hover{
+    box-shadow: 0px 8px 8px 0px rgba(0,0,0,0.5);
+}
+
+
+.cos60009 p, .cos60004 p {
+    margin: 0;
+    
+}
+
+.cos60009 {
+    background-color: var(--mid2);
+}
+
+.cos60004 {
+    background-color: var(--dark2);
+}
+
+/* Form */
+
+form {
+    max-width: 32em;
+    margin: auto
+}
+
+form label {
+    white-space: nowrap;
+}
+
+form label input {
+    margin-bottom: 0.5em;
+
+}
+
+form fieldset {
+    margin: 1em 1em 1em 1em;
+}
+
+textarea#comment {
+    width: 100%;
+    height: 8em;
 }

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="description" content="">
+        <meta name="keywords" content="">
+        <meta name="author" content="Daniel Ding">
+        <title>Enhancement</title>
+
+        <!-- External CSS stylesheet -->
+        <link rel="stylesheet" href="styles/style.css">
+
+        <!-- External Google Font -->
+         <link rel="preconnect" href="https://fonts.googleapis.com">
+         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+         <link href="https://fonts.googleapis.com/css2?family=Ubuntu+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    </head>
+
+    <body>
+        <header id="header">
+            <a href="index.html" id="logo"><img src="images/ducky_logo.webp" alt="Ducky Logo" height="64"></a>
+            <nav id="nav_main">
+                <ul>
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+                    <li>
+                        <a href="product.html">Product</a>
+                    </li>
+                    <li>
+                        <a href="enquiry.html">Enquiry</a>
+                    </li>
+                    <li>
+                        <a href="about.html">About</a>
+                    </li>
+                    <li>
+                        <a href="enhancement.html">Enhancement</a>
+                    </li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <article>
+                <h1>Enhancement</h1>
+                <h2>Enhancement 1 - CSS Variables</h2>
+                <p>To ensure a consistent look across all pages, a colour scheme is generated with <a href="https://coolors.co/0a2239-53a2be-1d84b5-132e32-176087">coolors.co</a>. Each colour is assigned a functional name (e.g. dark1, lightText, lightBackground and mid1) and defined as root variables.</p>
+                <p>Defining the colour scheme functionally as variables allows</p>
+                    <ul>
+                        <li>The subsequent CSS can use the colour scheme based on their intended function to ensure it is applied consistently</li>
+                        <li>Creating a single source of colour values to reduce risk of errors in colour values</li>
+                        <li>A single point to edit to update/experienment with different colours</li>
+                    </ul>
+                <p>Source: <a href="https://www.w3schools.com/css/css3_variables.asp">w3schools</a></p>
+                <h2>Enhancement 2 - CSS Accordion</h2>
+                <p>Accordion is a common element that allows collapsable elements on the web page. I used an accordion to add additional information for a product.</p>
+                <p>The following HTML and CSS elements/properties are used to implement the accordion</p>
+                    <ul>
+                        <li>A standalone checkbox and linked label to toggle the state of the accordion</li>
+                        <li>content height set in CSS depending on the state of the checkbox</li>
+                        <li>A short transition time is set to create a smooth animated transition between the closed and open state</li>
+                        <li>::after, transition and transform are used to create the drop down arrow</li>
+                    </ul>
+                <p>It is noted that this technique uses nested CSS to update the height of the content based on the state of the checkbox However, despite its implementation in all major browsers, nested CSS currently remains a <a href="https://www.w3.org/standards/history/css-nesting-1/">working draft</a> and it triggers a parsing error on the CSS validator.</p>
+                <p>Source: <a href="https://alvarotrigo.com/blog/css-accordion/">https://alvarotrigo.com/blog/css-accordion/</a></p>
+            </article>
+        </main>
+
+        <footer>
+            <p id="top"><a href="#header">Back to Top</a></p>
+            <nav id="nav_footer">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="product.html">Product</a></li>
+                    <li><a href="enquiry.html">Enquiry</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="enhancement.html">Enhancement</a></li>
+                </ul>
+            </nav>
+            <p id="copyright">
+                © 2026 Daniel D
+            </p>
+        </footer>
+    </body>
+</html>
